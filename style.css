@@ -1,0 +1,60 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  width: 100%; height: 100%; overflow: hidden;
+  background: #0b1030; color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Noto Sans SC", sans-serif;
+  -webkit-user-select: none; user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: none;
+}
+canvas { display: block; position: fixed; inset: 0; }
+
+.hidden { display: none !important; }
+
+#hud {
+  position: fixed; top: max(16px, env(safe-area-inset-top)); left: 0; right: 0;
+  text-align: center; pointer-events: none;
+}
+#score { font-size: 64px; font-weight: 800; text-shadow: 0 4px 16px rgba(0,0,0,.35); }
+#combo { font-size: 18px; font-weight: 700; color: #ffe27a; min-height: 24px; }
+
+.icon-btn {
+  position: fixed; top: max(12px, env(safe-area-inset-top)); right: 12px;
+  width: 44px; height: 44px; border-radius: 50%; border: none;
+  background: rgba(255,255,255,.15); color: #fff; font-size: 20px; cursor: pointer;
+  z-index: 10;
+}
+
+.overlay {
+  position: fixed; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 14px;
+  text-align: center; padding: 24px;
+}
+#menu { cursor: pointer; }
+#over { background: rgba(5, 8, 25, .55); backdrop-filter: blur(3px); }
+
+.title {
+  font-size: 68px; line-height: .95; font-weight: 900; letter-spacing: 4px;
+  background: linear-gradient(180deg, #fff, #9fd3ff);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,.35));
+}
+.sub { font-size: 18px; opacity: .85; }
+.big { font-size: 88px; font-weight: 900; }
+.badge {
+  background: #ffcf3f; color: #3a2500; font-weight: 800;
+  padding: 6px 14px; border-radius: 999px; font-size: 14px;
+}
+.pulse { font-size: 20px; font-weight: 600; animation: pulse 1.2s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { opacity: .45; } 50% { opacity: 1; } }
+
+.buttons { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; width: min(280px, 80vw); }
+.btn {
+  border: none; border-radius: 14px; padding: 16px 20px;
+  font-size: 18px; font-weight: 700; cursor: pointer;
+  background: #ffffff; color: #1b2350;
+  box-shadow: 0 6px 0 rgba(0,0,0,.25);
+}
+.btn:active { transform: translateY(3px); box-shadow: 0 3px 0 rgba(0,0,0,.25); }
+.btn:disabled { opacity: .5; }
+.btn-accent { background: #ffcf3f; color: #3a2500; }

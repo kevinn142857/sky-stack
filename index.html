@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <title>Sky Stack</title>
+  <!-- YouTube Playables SDK: MUST be loaded before any game code. -->
+  <script src="https://www.youtube.com/game_api/v1"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <div id="hud" class="hidden">
+    <div id="score">0</div>
+    <div id="combo"></div>
+  </div>
+  <button id="muteBtn" class="icon-btn" aria-label="Toggle sound">🔊</button>
+
+  <div id="menu" class="overlay">
+    <h1 class="title">SKY<br />STACK</h1>
+    <p id="tapToStart" class="pulse">Tap to start</p>
+    <p id="menuBest" class="sub"></p>
+  </div>
+
+  <div id="over" class="overlay hidden">
+    <p id="overTitle" class="sub">Game Over</p>
+    <div id="overScore" class="big">0</div>
+    <p id="overBest" class="sub"></p>
+    <p id="newBest" class="badge hidden">NEW BEST!</p>
+    <div class="buttons">
+      <button id="continueBtn" class="btn btn-accent">Continue ▶</button>
+      <button id="againBtn" class="btn">Play again</button>
+    </div>
+  </div>
+
+  <script src="src/sdk.js"></script>
+  <script src="src/audio.js"></script>
+  <script src="src/game.js"></script>
+</body>
+</html>
